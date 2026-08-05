@@ -18,10 +18,11 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS",
-    "127.0.0.1,localhost,instagram-login-4xme.onrender.com"
-).split(",")
+# ALLOWED_HOSTS = os.environ.get(
+#     "ALLOWED_HOSTS",
+#     "127.0.0.1,localhost,instagram-login-4xme.onrender.com"
+# ).split(",")
+ALLOWED_HOSTS = ["*"]
 
 print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
