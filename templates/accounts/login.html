@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet"
+        href="{% static 'accounts/login.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="{% url 'index' %}"
+            class="back">&#8592;</a>
+
+        <div class="language">
+            English (US)
+        </div>
+
+        <img src="{% static 'accounts/logo.png' %}"
+            class="logo">
+
+        <form>
+
+            <input type="text"
+                placeholder="Username, email or mobile number">
+
+            <input type="password"
+                placeholder="Password">
+
+            <button class="login-btn">
+                Log in
+            </button>
+
+        </form>
+
+        <a href="#"
+            class="forgot">
+            Forgot password?
+        </a>
+
+        <button class="create-btn">
+            Create new account
+        </button>
+
+        <div class="footer">
+            <img src="{% static 'accounts/meta.png' %}"
+                alt="Meta">
+            <span>Meta</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
