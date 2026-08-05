@@ -16,12 +16,13 @@ SECRET_KEY = os.environ.get(
     "django-insecure-gv!aj*$-__f!3oma#&s0-xix4#s#-y2-rja((id9x9mg9al6x8",
 )
 
-DEBUG = os.environ.get("DEBUG", "True") == "True"
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get(
-    "ALLOWED_HOSTS",
-    "127.0.0.1,localhost",
-).split(",")
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "instagram-login-4xme.onrender.com",
+]
 
 
 # APPLICATIONS
