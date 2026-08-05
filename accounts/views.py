@@ -30,10 +30,14 @@ def password_page(request):
     })
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username")
+        # username = request.POST.get("username")
         password = request.POST.get("password")
+        identifier = request.POST.get("identifier")
+        print(identifier)
 
-        user = User.objects.filter(username=username).first()
+        user = User.objects.filter(
+            Q(mobile=identifier) | Q(email=identifier) | Q(username=identifier)
+        ).first()
 
         if user:
             # Save the username in the session
