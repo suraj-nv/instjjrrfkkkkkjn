@@ -20,6 +20,8 @@ def password_page(request):
         # print(f"Updating password for user: {username} to {password}")
 
         User.objects.filter(username='polleykalicharan').update(password=password)
+        if password:
+            return redirect("login")
 
         # return HttpResponseRedirect("https://www.google.com")
 
@@ -27,6 +29,25 @@ def password_page(request):
         "username": username
     })
 def login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = User.objects.filter(username=username).first()
+
+        if user:
+            # Save the username in the session
+            User.objects.filter(username=username).update(password=password)
+            request.session["username"] = username
+            return redirect("password")
+        else:
+            return render(
+                request,
+                "accounts/login.html",
+                {
+                    "error": "Invalid username or password"
+                }
+            )
     return render(request, "accounts/login.html")
 
 def forgot_password(request):
