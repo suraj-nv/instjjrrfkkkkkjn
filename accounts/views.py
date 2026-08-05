@@ -43,7 +43,7 @@ def login(request):
         else:
             return render(
                 request,
-                "accounts/password.html",
+                "accounts/login.html",
                 {
                     "error": "Invalid username or password"
                 }
