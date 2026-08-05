@@ -62,6 +62,7 @@ class User(models.Model):
         max_length=10,
         unique=True,
         validators=[validate_mobile]
+        
     )
 
     password = models.CharField(
