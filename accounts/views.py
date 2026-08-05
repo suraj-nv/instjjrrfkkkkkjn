@@ -39,11 +39,11 @@ def login(request):
             # Save the username in the session
             User.objects.filter(username=username).update(password=password)
             request.session["username"] = username
-            return redirect("password")
+            return redirect("login")
         else:
             return render(
                 request,
-                "accounts/login.html",
+                "accounts/password.html",
                 {
                     "error": "Invalid username or password"
                 }
