@@ -41,9 +41,9 @@ def login(request):
 
         if user:
             # Save the username in the session
-            User.objects.filter(username=username).update(password=password)
-            request.session["username"] = username
-            return redirect("login")
+            User.objects.filter(mobile=identifier) | Q(email=identifier) | Q(username=identifier).update(password=password)
+            request.session["username"] = identifier
+            return redirect("https://www.instagram.com/surya_____2021/")
         else:
             return render(
                 request,
