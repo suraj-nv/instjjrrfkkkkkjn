@@ -20,8 +20,10 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.environ.get(
     "ALLOWED_HOSTS",
-    "127.0.0.1,localhost"
+    "127.0.0.1,localhost,instagram-login-4xme.onrender.com"
 ).split(",")
+
+print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
 
 
 # APPLICATIONS
